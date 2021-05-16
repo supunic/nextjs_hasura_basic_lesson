@@ -9,7 +9,7 @@ const FetchMain: VFC = () => {
   const { data, error, loading } = useQuery<GetUsersQuery>(GET_USERS, {
     fetchPolicy: 'cache-and-network', // 推奨 毎回サーバーサイドのデータを取得してキャッシュする（データ取得中は前キャッシュのデータを表示） → データ更新が多い or リアルタイムにしたい時
     // fetchPolicy: 'network-only', // 毎回サーバーサイドのデータを取得してキャッシュする（データ取得中は何も表示されない） → データ更新が多い or リアルタイムにしたい時
-    // fetchPolicy: 'cache-first', // サーバーサイドの更新を見に行かない → データ更新が少ない場合
+    // fetchPolicy: 'cache-first', // デフォルト値、サーバーサイドの更新を見に行かない → データ更新が少ない場合
     // fetchPolicy: 'no-cache', // キャッシュを使用しない → 通常のaxios spaの挙動
     // fetchPolicy: 'cache-only',
     // fetchPolicy: 'standby',
