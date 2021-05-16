@@ -4,7 +4,7 @@ interface Props {
   printMsg: () => void
 }
 
-export const Child: VFC<Props> = ({ printMsg }) => {
+export const Child: VFC<Props> = memo(({ printMsg }) => {
   return (
     <>
       {console.log('Child rendered')}
@@ -17,4 +17,4 @@ export const Child: VFC<Props> = ({ printMsg }) => {
       </button>
     </>
   )
-}
+})

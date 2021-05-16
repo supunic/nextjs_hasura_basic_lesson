@@ -18,16 +18,16 @@ export const useCreateForm = () => {
       })
     }
   })
-  const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleTextChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value)
-  }
-  const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
+  }, [])
+  const handleUsernameChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value)
-  }
-  const printMsg = () => {
+  }, [])
+  const printMsg = useCallback(() => {
     console.log('Hello')
-  }
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  }, [])
+  const handleSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
       await insert_users_one({
@@ -39,7 +39,7 @@ export const useCreateForm = () => {
       alert(err.message)
     }
     setUsername('')
-  }
+  }, [username])
   return {
     text,
     username,
