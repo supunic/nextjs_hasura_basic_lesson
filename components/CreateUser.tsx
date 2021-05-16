@@ -1,5 +1,6 @@
 import { VFC } from 'react'
 import { useCreateForm } from '../hooks/useCreateForm'
+import { Child } from '../components/Child'
 
 export const CreateUser: VFC = () => {
   const {
@@ -8,6 +9,7 @@ export const CreateUser: VFC = () => {
     handleUsernameChange,
     handleTextChange,
     handleSubmit,
+    printMsg
   } = useCreateForm()
 
   return (
@@ -42,6 +44,7 @@ export const CreateUser: VFC = () => {
           Submit
         </button>
       </form>
+      <Child printMsg={printMsg} />
     </>
   )
 }

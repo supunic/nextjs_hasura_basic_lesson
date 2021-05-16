@@ -24,7 +24,7 @@ export const useCreateForm = () => {
   const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value)
   }
-  const printMsg = (e: ChangeEvent<HTMLFormElement>) => {
+  const printMsg = () => {
     console.log('Hello')
   }
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
