@@ -89,7 +89,7 @@ const HasuraCRUD: VFC = () => {
 
   return (
     <Layout title="Hasura CRUD">
-      <p className="mb-3 font-bold">Hasura main page</p>
+      <p className="mb-3 font-bold">Hasura CRUD</p>
       <form
         className="flex flex-col justify-center items-center"
         onSubmit={handleSubmit}
