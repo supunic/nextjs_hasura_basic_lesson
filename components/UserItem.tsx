@@ -14,7 +14,10 @@ interface Props {
   >
 }
 
-export const UserItem: VFC<Props> = ({
+// 親コンポーネントのstateが変更される → 子コンポーネントに再レンダリングがかかる
+// → 親にあるeditedUser stateがinput入力で更新されるたびに再レンダリングされてしまう
+// → 子コンポーネントをmemo化することで防げる
+export const UserItem: VFC<Props> = memo(({
   user,
   delete_users_by_pk,
   setEditedUser,
@@ -48,4 +51,4 @@ export const UserItem: VFC<Props> = ({
       </button>
     </div>
   )
-}
+})
